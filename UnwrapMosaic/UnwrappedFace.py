@@ -121,7 +121,7 @@ class UnwrappedFaceWeightedAveragePose(nn.Module):
 		super(UnwrappedFaceWeightedAveragePose, self).__init__()
 
 		self.pix2pixUnwrapped = Pix2PixModel(3)
-                self.pix2pixSampler = NoSkipPix2PixModel_pose(input_num_channels, output_num_channels, input_pose=input_pose, inner_nc=inner_nc)
+		self.pix2pixSampler = NoSkipPix2PixModel_pose(input_num_channels, output_num_channels, input_pose=input_pose, inner_nc=inner_nc)
 
 	def forward(self, target_pose, pose_gt, *input_imgs):
 		xs = np.linspace(-1,1,input_imgs[0].size(2))
